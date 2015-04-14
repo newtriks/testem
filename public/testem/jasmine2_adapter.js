@@ -52,7 +52,7 @@ function jasmine2Adapter() {
 					test.items.push({
 						passed: item.passed,
 						message: item.message,
-						stack: item.stack || undefined
+						stack: item.stack.split('\n').slice(0, 3).join('\n') || undefined
 					});
 				}
 				test.failed++;
